@@ -2,6 +2,22 @@
 
 {% form_theme contact_form 'bootstrap_4_layout.html.twig' %}
 
+{% block header %}
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('{{ asset('img/home-bg.jpg') }} '); height:150px;">
+        <div class="container total_height">
+            <div class="row total_height">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 total_height">
+                    <div class="site-heading total_height" style="padding: 0px; margin-top: 40px;">
+                        <h1>Symfony Box</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+{% endblock %}
 
 {% block content %}
     <!-- Main Content -->
@@ -10,6 +26,7 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <p>Vous souhaitez me contacter ? Remplissez le formulaire ci-dessous et je reviendrai vers vous!</p>
 
+                {{ include('_flashes.html.twig') }}
 
                 {{ form_start(contact_form) }}
                     {{ form_errors(contact_form) }}
@@ -25,7 +42,6 @@
 
 
                     {{ form_row(contact_form.content, {'label':'Votre demande', 'attr': {'rows': '10'}}) }}
-
 
                     <div class="row">
                         <div class="form-group col-xs-12">

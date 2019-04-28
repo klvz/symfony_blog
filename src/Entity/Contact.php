@@ -17,11 +17,6 @@ class Contact
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
-     */
-    private $id_contact;
-
-    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $subject;
